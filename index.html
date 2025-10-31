@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Name Photography</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+        <h1 class="logo">Name Photography</h1>
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+    </nav> 
+  </header>
+  <!-- About -->
+  <section id="about">
+    <h2 class="contact-info">
+      <span>@yourinstagram</span>
+      <span>yourmail@gmail.com</span>
+      <span>+(47) 99999999</span>
+    </h2>
+    <img class="img-home" src="pictures/home/img-home.jpeg" alt="Home Image">
+    <div class="parallax-text" id="movingText">
+      <h1>Name <br>SecondName</h1> 
+      <p> An autobiography is a self-written account of a person's life, written in the first person and in the nonfiction genre. It provides a personal narrative of their life, experiences, and reflections, and can be presented as a full book, a shorter essay, or even a diary. </p> 
+      <p>Photography is the art, application, and practice of creating images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film. It is employed in many fields of science, manufacturing (e.g., photolithography), and business, as well as its more direct uses for art, film and video production, recreational purposes, hobby, and mass communication.</p>
+    </div>
+</section>
+  <script>
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const text = document.querySelector('.parallax-text');
+    const speed = -1.6;
+    text.style.transform = `translateY(${scrollY * speed}px)`;
+  });
+  </script>
+  
+  <!-- Portfolio -->
+  <section id="portfolio">
+  <h1 class="title-portfolio" id="portfolio">Portfolio</h1>
+  <section class="gallery">
+    <div class="category" id="family">
+      <img src="pictures/family/family-1.jpg" alt="Family category cover">
+      <h2 class="category-title">Family</h2>
+    </div>
+
+    <div class="category" id="solo">
+      <img src="pictures/solo/solo-1.jpg" alt="Solo category cover">
+      <h2 class="category-title">Solo</h2>
+    </div>
+
+    <div class="category" id="event">
+      <img src="pictures/event/event-1.jpg" alt="Event category cover">
+      <h2 class="category-title">Event</h2>
+    </div>
+
+    <div class="category" id="pregnancy">
+      <img src="pictures/pregnancy/pregnancy-1.jpg" alt="Pregnancy category cover">
+      <h2 class="category-title">Pregnancy</h2>
+    </div>
+
+    <div class="category" id="wedding">
+      <img src="pictures/wedding/wedding-1.jpg" alt="Wedding category cover">
+      <h2 class="category-title">Wedding</h2>
+    </div>
+  </section>
+
+  <div id="modal-family" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-gallery">
+        <!-- family photos go here -->
+        <img src="pictures/family/family-1.jpg">
+        <img src="pictures/family/family-2.jpg">
+        <img src="pictures/family/family-3.jpg">
+        <img src="pictures/family/family-4.jpg">
+        <img src="pictures/family/family-5.jpg">
+        <img src="pictures/family/family-6.jpg">
+        <img src="pictures/family/family-7.jpg">
+        <img src="pictures/family/family-8.jpg">
+        <img src="pictures/family/family-9.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-solo" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-gallery">
+        <!-- solo photos go here -->
+        <img src="pictures/solo/solo-1.jpg">
+        <img src="pictures/solo/solo-2.jpg">
+        <img src="pictures/solo/solo-3.jpg">
+        <img src="pictures/solo/solo-4.jpg">
+        <img src="pictures/solo/solo-5.jpg">
+        <img src="pictures/solo/solo-6.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-event" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-gallery">
+        <!-- event photos go here -->
+        <img src="pictures/event/event-1.jpg">
+        <img src="pictures/event/event-2.jpg">
+        <img src="pictures/event/event-3.jpg">
+        <img src="pictures/event/event-4.jpg">
+        <img src="pictures/event/event-5.jpg">
+        <img src="pictures/event/event-6.jpg">
+        <img src="pictures/event/event-7.jpg">
+        <img src="pictures/event/event-8.jpg">
+        <img src="pictures/event/event-9.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-pregnancy" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-gallery">
+        <!-- pregnancy photos go here -->
+        <img src="pictures/pregnancy/pregnancy-1.jpg">
+        <img src="pictures/pregnancy/pregnancy-2.jpg">
+        <img src="pictures/pregnancy/pregnancy-3.jpg">
+        <img src="pictures/pregnancy/pregnancy-4.jpg">
+        <img src="pictures/pregnancy/pregnancy-5.jpg">
+        <img src="pictures/pregnancy/pregnancy-6.jpg">
+        <img src="pictures/pregnancy/pregnancy-7.jpg">
+        <img src="pictures/pregnancy/pregnancy-8.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-wedding" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-gallery">
+        <!-- wedding photos go here -->
+        <img src="pictures/wedding/wedding-1.jpg">
+        <img src="pictures/wedding/wedding-2.jpg">
+        <img src="pictures/wedding/wedding-3.jpg">
+        <img src="pictures/wedding/wedding-4.jpg">
+        <img src="pictures/wedding/wedding-5.jpg">
+        <img src="pictures/wedding/wedding-6.jpg">
+        <img src="pictures/wedding/wedding-7.jpg">
+        <img src="pictures/wedding/wedding-8.jpg">
+        <img src="pictures/wedding/wedding-9.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-img" src="" alt="Full size">
+  </div>
+    </section>
+  
+  <!--Contact-->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <h1 class="contact-title">Let’s make something beautiful.</h1>
+      <p class="contact-text">
+      Connect with us to explore how your story can be captured with precision and artistry.
+      </p>
+
+      <div class="contact">
+        <p><strong>Instagram: </strong> <a href="https://instagram.com/yourinstagram" target="_blank">@yourinstagram</a></p>
+        <p><strong>Email: </strong> <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></p>
+        <p><strong>Phone: </strong> <a href="tel:+4799999999">(+47) 999 99999</a></p>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" rows="5" placeholder="Your message..."></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  </section>
+</body>
+</html>

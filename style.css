@@ -1,0 +1,423 @@
+:root {
+  --cafe-noir: #4C3D19;
+  --kombu-green: #354024;
+  --moss-green: #889063;
+  --tan: #CFBB99;
+  --seasalt: #FAF9F9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--seasalt);
+  color: var(--kombu-green);
+  font-family: 'Copperplate', sans-serif;
+  scroll-behavior: smooth;
+}
+/* Navbar */
+header{
+  background-color: var(--kombu-green);
+}
+.navbar {
+  min-height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+.logo {
+  font-size: 1.5rem;
+  color: var(--tan);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto; 
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--tan);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: var(--moss-green);
+}
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--tan);
+}
+@media(max-width: 768px){
+  .hamburger{
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links{
+    position: fixed;
+    right: -100%;
+    top: 53px;
+    gap: 15px;
+    flex-direction: column;
+    background-color: var(--kombu-green);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 10px 0;
+  }
+  .nav.item{
+    margin: 16px 0;
+  }
+  .nav-links.active{
+    right: 0;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* flexible space between items */
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: var(--cafe-noir);
+  text-align: center;
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 800px;
+}
+.contact-info span {
+  flex: 1 1 200px; 
+  text-align: left;
+}
+@media (max-width: 768px){
+  .contact-info{
+    gap: 0.1rem;
+    display: flex;
+    justify-content: right;
+  }
+  .contact-info span {
+    text-align: right;
+  }
+}
+/* Home */
+.img-home {
+  margin: 6vh auto 0 10vw;
+  width: min(75%, 900px);
+  position: relative;
+  top: 70px;
+  left: 50px;
+  z-index: 1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 768px) {
+  .img-home {
+    width: 100%;
+    margin: 1vh auto 0 auto; /* center and reduce top space */
+  }
+}
+
+.parallax-text {
+  position: absolute;
+  top: 70%; right: 8%;
+  color: var(--moss-green);
+  z-index: 2;
+  transition: transform 0.1s ease-out;
+}
+.parallax-text h1 {
+    font-size: 5rem;
+    
+  } 
+.parallax-text p {
+  margin-top: 120px;
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 1.4rem; 
+}
+/* Mobile adjustments */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Make section shrink to fit content */
+  #about {
+    height: 500px;        
+    padding: 20px;   
+  }
+
+  .parallax-text {
+    position: relative;   
+    top: auto;
+    right: auto;
+    transform: none;   
+    max-width: 100%;    
+    margin: 20px 0;      
+    text-align: left;     
+  }
+
+  .parallax-text h1 {
+    font-size: 2.5rem;  
+    line-height: 1.2;
+  }
+
+  .parallax-text p {
+    margin-top: 15px;
+    font-size: 1rem; 
+    line-height: 1.5;
+  }
+
+  .img-home {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* center horizontally */
+    position: relative;
+    top: 10%;
+    left: 0;         /* remove the previous offset */
+    transform: none; /* remove translateX */
+  }
+
+}
+
+/* Portfolio */
+#portfolio{
+  background-color: var(--kombu-green);
+  width: 100%;
+  color: var(--seasalt);
+}
+.title-portfolio {
+  color: var(--moss-green);
+  font-size: clamp(3rem, 12vw, 16rem); /* scales with screen width */
+  margin-top: 35vh; /* scales with viewport height */
+  width: 100%;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding-top: 5vh;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  margin-top: 10px;
+}
+.category {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+.category img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  transition: transform 0.4s ease;
+}
+.category:hover img {
+  transform: scale(1.05);
+}
+.category-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #CFBB99;
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+  pointer-events: none; 
+}
+
+/* Modal */
+
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: flex-start; /* start from top */
+  overflow-y: auto; /* allow scrolling if content too tall */
+  padding: 40px 20px;
+}
+.modal-content {
+  position: relative;
+  max-width: 1000px;
+  width: 90%;
+}
+.modal-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.modal-gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+}
+/* The close "X" button */
+.close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 40px;
+  color: #CFBB99;
+  cursor: pointer;
+}
+.lightbox {
+  display: none; 
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #CFBB99;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+/* Contact */
+
+.contact-section {
+  background-color: var(--seasalt);
+  color: var(--kombu-green);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+.contact-container {
+  max-width: 600px;
+  text-align: center;
+}
+.contact-title {
+  font-size: 2rem;
+  color: var(--cafe-noir);
+  margin-bottom: 1rem;
+}
+.contact-text {
+  font-size: 1rem;
+  color: var(--kombu-green);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.contact p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.3rem 0;
+  color: var(--kombu-green);
+}
+.contact strong {
+  font-weight: 600;
+}
+.contact a {
+  color: var(--moss-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact a:hover {
+  color: var(--cafe-noir);
+}
+
+/* form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.contact-form input,
+.contact-form textarea {
+  background: none;
+  border: 1px solid var(--moss-green);
+  color: var(--kombu-green);
+  padding: 12px;
+  font-family: 'Copperplate', sans-serif;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+@media (max-width: 768px) {
+  .contact-title{
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+  .contact-text{
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--tan);
+}
+.contact-form button {
+  background-color: var(--kombu-green);
+  color: var(--seasalt);
+  border: none;
+  padding: 12px;
+  font-family: 'Copperplate', sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact-form button:hover {
+  background-color: var(--moss-green);
+}
